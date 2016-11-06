@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 09:46:12 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/06 10:13:57 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/06 10:21:50 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/06 10:27:38 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	int		i;
-	int		length;
-	char	*res;
+	size_t		i;
+	char		*s1;
+	char		*s2;
+	char		*tmp;
 
-	length = ft_strlen((char*)s);
-	res = (char*)malloc(sizeof(res) * length);
-	while (i < length)
+	i = 0;
+	s1 = (char*)dest;
+	s2 = (char*)src;
+	while (i < n)
 	{
-		res[i] = f(s[i]);
+		tmp[i] = s2[i];
 		i++;
 	}
-	res[i] = '\0';
-	return (res);
+	i = 0;
+	while (i < n)
+	{
+		s1[i] = tmp[i];
+		i++;
+	}
+	return (dest);
 }

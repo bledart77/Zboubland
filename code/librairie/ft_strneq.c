@@ -1,6 +1,18 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strneq.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/06 09:50:08 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/06 10:14:55 by mcolas-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int		ft_strneq(char const *s1, char const *s2, size_t taille)
+#include "libft.h"
+
+int		ft_strneq(const char *s1, const char *s2, size_t taille)
 {
 	size_t		i;
 

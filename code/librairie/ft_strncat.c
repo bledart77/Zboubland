@@ -1,19 +1,33 @@
-#include "header.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/08/09 21:55:55 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/04 11:11:32 by mcolas-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	*ft_strncat(char *s1, char *s2, int n)
+#include "libft.h"
+
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int		j;
-	int		i;
+	int i;
+	unsigned int j;
 
 	i = 0;
 	j = 0;
-	while (s1[i])
+	i = 0;
+	while (dest[i])
 		i++;
-	while (s2[j] && j < n)
+	while (j < nb && src[j])
 	{
-		s1[i + j] = s2[j];
+		dest[i] = src[j];
 		j++;
+		i++;
 	}
-	s1[i + j] = '\0';
-	return (s1);
+	dest[i] = '\0';
+	return (dest);
 }

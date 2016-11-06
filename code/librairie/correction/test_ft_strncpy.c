@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_streq.c                                         :+:      :+:    :+:   */
+/*   test_ft_strncpy.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 09:43:36 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/06 10:13:39 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/04 10:28:01 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/04 11:03:46 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "test_header.h"
 
-int		ft_streq(const char *s1, const char *s2)
+int		test_ft_strncpy(void)
 {
-	int		i;
-
-	i = 0;
-	while (s1[i] && s2[i])
-	{
-		if (s1[i] != s2[i])
-			return (0);
-		i++;
-	}
-	if (!s1[i] || !s2[i])
+	char	*tab1, tab11[16];
+	tab1 = "htkrlugpogfh$%^";
+	if (ft_strcmp(ft_strncpy(tab11, tab1, 5), strncpy(tab11, tab1, 5)) == 0 && ft_strcmp(ft_strncpy(tab11, tab1, 12), strncpy(tab11, tab1, 12)) == 0 && ft_strcmp(ft_strncpy(tab11, tab1, 16), strncpy(tab11, tab1, 16)) == 0 && ft_strcmp(ft_strncpy(tab11, tab1, 0), strncpy(tab11, tab1, 0)) == 0)
 		return (0);
 	return (1);
 }

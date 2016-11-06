@@ -1,12 +1,24 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/06 09:48:32 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/06 10:14:13 by mcolas-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+#include "libft.h"
+
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
 	unsigned int		i;
 	int		length;
 	char	*res;
 
-	length = ft_strlen(s);
+	length = ft_strlen((char*)s);
 	res = (char*)malloc(sizeof(res) * length);
 	while (i < (unsigned int)length)
 	{

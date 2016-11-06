@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   test_header.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 09:46:12 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/06 10:13:57 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/04 08:27:09 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/04 15:58:27 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef TEST_HEADER_H
+# define TEST_HEADER_H
 
-char	*ft_strmap(const char *s, char (*f)(char))
-{
-	int		i;
-	int		length;
-	char	*res;
+#include <stdio.h>
+#include "../libft.h"
 
-	length = ft_strlen((char*)s);
-	res = (char*)malloc(sizeof(res) * length);
-	while (i < length)
-	{
-		res[i] = f(s[i]);
-		i++;
-	}
-	res[i] = '\0';
-	return (res);
-}
+int		test_ft_strlen(void);
+int		test_ft_strcmp(void);
+int		test_ft_strncmp(void);
+int		test_ft_strdup(void);
+int		test_ft_strcpy(void);
+int		test_ft_strncpy(void);
+int		test_ft_strcat(void);
+int		test_ft_strncat(void);
+int		test_ft_atoi(void);
+int		test_ft_strstr(void);
+int		test_ft_memset(void);
+
+#endif

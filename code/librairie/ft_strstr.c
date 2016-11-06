@@ -1,30 +1,42 @@
-#include "header.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/08/09 13:05:24 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/04 14:00:15 by mcolas-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	int		i;
-	int		j;
-	int		k;
+	int tab[3];
 
-	k = 0;
-	i = 0;
-	j = 0;
-	while (str[i])
+	tab[0] = 0;
+	tab[1] = 0;
+	tab[2] = 0;
+	if (to_find[tab[0]] == 0)
+		return (str);
+	while (str[tab[0]])
 	{
-		if (str[i] == to_find[k])
+		if (str[tab[0]] == to_find[0])
 		{
-			while (to_find[j])
+			while (to_find[tab[1]])
 			{
-				if (str[i + j] == to_find[j])
-					k++;
-				j++;
+				if (str[tab[0] + tab[1]] == to_find[tab[1]])
+					tab[2]++;
+				tab[1]++;
 			}
-			if (j == k && j != 0)
-				return (&str[i]);
-			j = 0;
-			k = 0;
+			if (tab[2] == tab[1] && tab[2] != 0)
+				return (&str[tab[0]]);
+			tab[2] = 0;
 		}
-		i++;
+		tab[1] = 0;
+		tab[0]++;
 	}
-	return (NULL);
+	return (0);
 }

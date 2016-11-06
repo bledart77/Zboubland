@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   test_ft_bzero.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 09:46:12 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/06 10:13:57 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/04 15:50:17 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/04 15:58:21 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "test_header.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
+int		test_ft_bzero(void)
 {
-	int		i;
-	int		length;
-	char	*res;
-
-	length = ft_strlen((char*)s);
-	res = (char*)malloc(sizeof(res) * length);
-	while (i < length)
-	{
-		res[i] = f(s[i]);
-		i++;
-	}
-	res[i] = '\0';
-	return (res);
-}
+	char	tab[10] = "1234567890";
+	char	tab[5] = "afjdt";
+	if (ft

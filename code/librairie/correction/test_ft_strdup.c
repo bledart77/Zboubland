@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   test_ft_strdup.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 09:46:12 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/06 10:13:57 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/04 09:40:37 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/04 09:54:45 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "test_header.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
+int		test_ft_strdup(void)
 {
-	int		i;
-	int		length;
-	char	*res;
-
-	length = ft_strlen((char*)s);
-	res = (char*)malloc(sizeof(res) * length);
-	while (i < length)
-	{
-		res[i] = f(s[i]);
-		i++;
-	}
-	res[i] = '\0';
-	return (res);
+	char	*tab1, *tab2, *tab3;
+	tab1 = "45";
+	tab2 = "egyudiuvfe4658@#%^&*()^%$#";
+	tab3 ="uehidein			ioeiccei";
+	if (ft_strcmp(ft_strdup(tab1), tab1) == 0 && ft_strcmp(ft_strdup(tab2), tab2) == 0 && ft_strcmp(ft_strdup(tab3), tab3) == 0)
+		return (0);
+	return (1);
 }

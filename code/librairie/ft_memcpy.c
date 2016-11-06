@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 09:46:12 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/06 10:13:57 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/06 10:04:28 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/06 10:26:15 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(const char *s, char (*f)(char))
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	int		i;
-	int		length;
-	char	*res;
+	size_t		i;
+	char		*s1;
+	char		*s2;
 
-	length = ft_strlen((char*)s);
-	res = (char*)malloc(sizeof(res) * length);
-	while (i < length)
+	s1 = (char*)dest;
+	s2 = (char*)src;
+	if (n == 0 || s1 == s2)
+		return (dest);
+	i = 0;
+	while (i < n)
 	{
-		res[i] = f(s[i]);
+		s1[i] = s2[i];
 		i++;
 	}
-	res[i] = '\0';
-	return (res);
+	return (dest);
 }
