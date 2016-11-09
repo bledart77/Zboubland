@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 09:50:23 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/07 09:51:40 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/07 14:08:52 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,8 @@ char	*ft_strnew(size_t taille)
 	int		i;
 
 	i = 0;
-	if (!(res = (char*)malloc(sizeof(res) * taille + 1)))
+	if (!(res = (char*)malloc(taille + 1)))
 		return (NULL);
-	while (i <= taille)
-	{
-		res[i] = '\0';
-		i++;
-	}
+	ft_memset(res, (int)'\0', taille + 1);
 	return (res);
 }

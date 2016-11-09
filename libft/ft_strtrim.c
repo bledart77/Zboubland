@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:40:58 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/07 09:53:31 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/08 09:16:26 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ static int		ft_trimlen(char *w)
 	int		i;
 
 	i = 0;
+	if (w == NULL)
+		return (0);
 	space = 0;
 	len = ft_strlen(w);
 	while ((w[i] == ' ' || w[i] == ',' || w[i] == '\t' || w[i] == '\n') && w[i])
@@ -46,10 +48,12 @@ char			*ft_strtrim(char const *s)
 	char	*w;
 	char	*res;
 
+	if (s == NULL)
+		return (NULL);
 	j = 0;
 	w = (char*)s;
 	i = 0;
-	if (!(res = (char*)malloc(sizeof(res) * ft_trimlen(w) + 1)))
+	if (!(res = (char*)malloc(ft_trimlen(w) + 1)))
 		return (NULL);
 	while ((w[i] == ' ' || w[i] == ',' || w[i] == '\t' || w[i] == '\n') && s[i])
 		i++;
@@ -59,5 +63,6 @@ char			*ft_strtrim(char const *s)
 		j++;
 		i++;
 	}
+	res[j] = '\0';
 	return (res);
 }

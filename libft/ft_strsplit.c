@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 13:49:34 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/07 09:57:01 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/09 15:08:34 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ char			**ft_strsplit(char *str, char c)
 	str_cpy = ft_strdup(str);
 	i_str_result = 0;
 	nb_words = ft_get_nb_words(str, c);
-	str_result = (char**)malloc(sizeof(char*) * (nb_words) + 1);
+	if (!(str_result = (char**)malloc(sizeof(char*) * (nb_words) + 1)))
+		return (NULL);
 	ft_bws(str_cpy, str_result, &i_str_result, c);
 	str_result[i_str_result] = NULL;
 	return (str_result);

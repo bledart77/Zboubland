@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 09:42:10 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/07 09:45:28 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/07 14:02:43 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ void	*ft_memalloc(size_t taille)
 
 	if (!(res = (void*)malloc(sizeof(res) * taille)))
 		return (NULL);
+	ft_bzero(res, taille);
 	return (res);
 }

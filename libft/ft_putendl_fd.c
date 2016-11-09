@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:06:07 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/07 09:47:11 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/09 14:43:45 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	write(fd, s, ft_strlen((char*)s));
-	write(fd, (char*)'\n', 1);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

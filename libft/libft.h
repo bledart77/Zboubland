@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 08:51:06 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/07 09:54:01 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/09 15:32:17 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdio.h>
 
 int		ft_strcmp(char *s1, char *s2);
 int		ft_strncmp(char *s1, char *s2, unsigned int n);
@@ -24,6 +25,7 @@ int		ft_strlen(char *str);
 char	*ft_strcpy(char *dest, char *src);
 char	*ft_strncpy(char *dest, char *src, unsigned int n);
 char	*ft_strstr(char *str, char *to_find);
+char	*ft_strnstr(char *str, char *to_find, int n);
 int		ft_atoi(char *str);
 char	*ft_strcat(char *dest, char *src);
 char	*ft_strncat(char *dest, char *src, unsigned int n);
@@ -31,7 +33,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_bzero(void *s, size_t n);
 int		ft_strlen(char *str);
-void	*ft_memmalloc(size_t taille);
+void	*ft_memalloc(size_t taille);
 void	ft_memdel(void **ap);
 void	ft_strclr(char *as);
 void	ft_strdel(char **as);
@@ -60,4 +62,13 @@ char	*ft_strtrim(char const *s);
 char	*ft_itoa(int n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
+void	ft_putstr(const char *str);
+void	ft_putchar(char c);
+void	ft_putstr_fd(const char *str, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl(char *str);
+void	ft_putendl_fd(char *str, int fd);
+void	ft_putnbr(int nb);
+void	ft_putnbr_fd(int nb, int fd);
+void	ft_strsplit(char *str, char c);
 #endif

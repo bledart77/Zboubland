@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 08:50:06 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/07 08:50:13 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/07 14:50:26 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,7 @@
 
 int		ft_strequ(const char *s1, const char *s2)
 {
-	int		i;
-
-	i = 0;
-	while (s1[i] && s2[i])
-	{
-		if (s1[i] != s2[i])
-			return (0);
-		i++;
-	}
-	if (!s1[i] || !s2[i])
-		return (0);
-	return (1);
+	if (!s1 ||!s2)
+		return(0);
+	return (ft_strcmp((char*)s1 , (char*)s2) ? 0 : 1);
 }
