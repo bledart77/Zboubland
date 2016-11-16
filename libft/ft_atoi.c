@@ -6,13 +6,13 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 19:34:30 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/04 10:47:33 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/16 12:17:32 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(char *str)
+int		ft_atoi(const char *str)
 {
 	int i;
 	int res;

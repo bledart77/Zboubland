@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 08:51:06 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/16 11:02:42 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/16 12:16:02 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,28 @@
 # include <unistd.h>
 # include <stdio.h>
 
-int					ft_strcmp(char *s1, char *s2);
-int					ft_strncmp(char *s1, char *s2, size_t n);
-char				*ft_strdup(char *src);
-int					ft_strlen(char *str);
-char				*ft_strcpy(char *dest, char *src);
-char				*ft_strncpy(char *dest, char *src, unsigned int n);
-char				*ft_strstr(char *str, char *to_find);
+int					ft_strcmp(const char *s1, const char *s2);
+int					ft_strncmp(const char *s1, const char *s2, size_t n);
+char				*ft_strdup(const char *src);
+int					ft_strlen(const char *str);
+char				*ft_strcpy(char *dest, const char *src);
+char				*ft_strncpy(char *dest, const char *src, size_t n);
+char				*ft_strstr(const char *str, const char *to_find);
 char				*ft_strnstr(const char *str, const char *to_find, size_t n);
-int					ft_atoi(char *str);
-char				*ft_strcat(char *dest, char *src);
-char				*ft_strncat(char *dest, char *src, unsigned int n);
+int					ft_atoi(const char *str);
+char				*ft_strcat(char *dest, const char *src);
+char				*ft_strncat(char *dest, const char *src, size_t n);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 void				*ft_memset(void *s, int c, size_t n);
-void				*ft_bzero(void *s, size_t n);
+void				ft_bzero(void *s, size_t n);
 int					ft_strlen(char *str);
 void				*ft_memalloc(size_t taille);
 void				ft_memdel(void **ap);
 void				ft_strclr(char *as);
 void				ft_strdel(char **as);
 int					ft_strequ(const char *s1, const char *s2);
-void				ft_striter(char *as, void (*f)(char *));
-void				ft_striteri(char *as, void (*f)(unsigned, char *));
+void				ft_striter(char *s, void (*f)(char *));
+void				ft_striteri(char *s, void (*f)(unsigned, char *));
 char				*ft_strmap(const char *s, char (*f)(char));
 char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 int					ft_strnequ(const char *s1, const char *s2, size_t taille);
