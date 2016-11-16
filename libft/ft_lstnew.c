@@ -1,46 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 14:35:38 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/09 15:46:06 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/16 09:25:28 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/16 09:27:04 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t		int_len(int n)
+t_list		*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t		i;
+	t_list		*new;
 
-	i = 1;
-	while (n /= 10)
-		i++;
-	return (i);
-}
-
-char				*ft_itoa(int n)
-{
-	char			*res;
-	size_t			len;
-	unsigned int	n2;
-
-	len = int_len(n);
-	n2 = n;
-	if (n < 0)
-	{
-		n2 = -n;
-		len++;
-	}
-	if (!(res = ft_strnew(len)))
+	if (!(new = (t_list *)malloc(sizeof(*new))))
 		return (NULL);
-	res[--len] = n2 % 10 + '0';
-	while (n2 /= 10)
-		res[--len] = n2 % 10 + '0';
-	if (n < 0)
-		res[0] = '-';
-	return (res);
+	if (content == NULL)
+	{
+		new->content = NULL;
+		new->content_size = 0;
+	}
+	else
+	{
+		if ((new->content = malloc(content_size)) == NULL)
+		{
+			free(new);
+			return (NULL);
+		}
+		ft_memcpy(new->content, content, content_size);
+		new->content_size = content_size;
+	}
+	new->next = NULL;
+	return (new);
 }

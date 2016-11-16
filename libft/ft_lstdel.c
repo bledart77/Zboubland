@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/09 14:29:59 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/16 10:26:12 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/15 09:15:43 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/16 10:59:31 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(char *s1, char *s2, size_t n)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t			i;
-	unsigned char	c1;
-	unsigned char	c2;
+	t_list		*lst;
+	t_list		*nxtlst;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (i + 1 < n && s1[i] && s2[i] && s2[i] == s1[i])
-		i++;
-	c1 = s1[i];
-	c2 = s2[i];
-	return (c1 - c2);
+	lst = *alst;
+	while (lst)
+	{
+		nxtlst = lst->next;
+		del(lst->content, lst->content_size);
+		free(lst);
+		lst = nxtlst;
+	}
+	*alst = NULL;
 }

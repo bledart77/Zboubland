@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:36:06 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/09 13:01:10 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/09 15:46:43 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned int	i;
+	unsigned int			i;
 	unsigned char			*p1;
 	unsigned char			*p2;
 

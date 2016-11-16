@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 09:27:19 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/07 09:52:22 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/16 10:28:47 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/16 10:57:49 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,16 @@
 
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	size_t		i;
+	size_t		len2;
 
-	i = 0;
 	if (*s2 == '\0')
-		return ((char*)s1);
-	while (*s1 && n)
+		return ((char *)s1);
+	len2 = ft_strlen((char*)s2);
+	while (*s1 != '\0' && n-- >= len2)
 	{
-		if (*s1 == s2[i])
-			i++;
-		else
-			i = 0;
-		if (s2[i] == '\0')
-			return ((char*)(s1 - i + 1));
+		if (*s1 == *s2 && ft_memcmp(s1, s2, len2) == 0)
+			return ((char *)s1);
 		s1++;
-		n--;
 	}
 	return (NULL);
 }

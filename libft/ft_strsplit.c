@@ -5,85 +5,68 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 13:49:34 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/09 15:08:34 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/15 08:48:23 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/15 09:28:28 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_get_nb_words(char *str, char c)
-{
-	int cnt;
-	int i;
-	int nb_words;
-
-	nb_words = 0;
-	cnt = 0;
-	i = -1;
-	while (str[++i] != '\0')
-	{
-		if (cnt > 0 && str[i] == c)
-		{
-			cnt = 0;
-			nb_words++;
-		}
-		else if (cnt == 0 && str[i] != c)
-			cnt++;
-		else if (cnt >= 0 && str[i] != c)
-			cnt++;
-	}
-	return (nb_words + 1);
-}
-
-static void		ft_aw(char **str, int *i_str_result, char *pointer, int *cnt)
-{
-	*cnt = 0;
-	str[*i_str_result] = (char*)malloc(sizeof(char) * (*cnt) + 1);
-	str[*i_str_result] = pointer;
-	*i_str_result += 1;
-}
-
-static void		ft_bws(char *str, char **str_result, int *i_str_result, char c)
+static int		ft_cnt_parts(const char *s, char c)
 {
 	int		cnt;
-	int		i;
-	char	*pointer;
+	int		in_substring;
 
-	i = -1;
+	in_substring = 0;
 	cnt = 0;
-	while (str[++i] != '\0')
+	while (*s != '\0')
 	{
-		if (cnt > 0 && str[i] == c)
+		if (in_substring == 1 && *s == c)
+			in_substring = 0;
+		if (in_substring == 0 && *s != c)
 		{
-			str[i] = '\0';
-			ft_aw(str_result, i_str_result, pointer, &cnt);
-		}
-		else if (cnt == 0 && str[i] != c)
-		{
-			pointer = &str[i];
+			in_substring = 1;
 			cnt++;
 		}
-		else if (cnt >= 0 && str[i] != c)
-			cnt++;
+		s++;
 	}
-	if (str[i] == '\0' && cnt > 0)
-		ft_aw(str_result, i_str_result, pointer, &cnt);
+	return (cnt);
 }
 
-char			**ft_strsplit(char *str, char c)
+static int		ft_wlen(const char *s, char c)
 {
-	char	*str_cpy;
-	char	**str_result;
-	int		nb_words;
-	int		i_str_result;
+	int		len;
 
-	str_cpy = ft_strdup(str);
-	i_str_result = 0;
-	nb_words = ft_get_nb_words(str, c);
-	if (!(str_result = (char**)malloc(sizeof(char*) * (nb_words) + 1)))
+	len = 0;
+	while (*s != c && *s != '\0')
+	{
+		len++;
+		s++;
+	}
+	return (len);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	char	**t;
+	int		nb_word;
+	int		index;
+
+	index = 0;
+	nb_word = ft_cnt_parts((const char *)s, c);
+	t = (char **)malloc(sizeof(*t) * (ft_cnt_parts((const char *)s, c) + 1));
+	if (t == NULL)
 		return (NULL);
-	ft_bws(str_cpy, str_result, &i_str_result, c);
-	str_result[i_str_result] = NULL;
-	return (str_result);
+	while (nb_word--)
+	{
+		while (*s == c && *s != '\0')
+			s++;
+		t[index] = ft_strsub((const char *)s, 0, ft_wlen((const char *)s, c));
+		if (t[index] == NULL)
+			return (NULL);
+		s = s + ft_wlen(s, c);
+		index++;
+	}
+	t[index] = NULL;
+	return (t);
 }

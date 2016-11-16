@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 10:16:20 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/09 09:40:58 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/09 15:46:24 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
-	size_t		i;
+	size_t				i;
 	unsigned char		*s1;
 	unsigned char		*s2;
 	unsigned char		c1;

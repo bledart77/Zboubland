@@ -6,33 +6,34 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:07:40 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/07 09:49:29 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/16 10:53:25 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		truc(char c, int fd)
-{
-	write(fd, &c, 1);
-}
-
 void			ft_putnbr_fd(int nb, int fd)
 {
-	unsigned int	n;
-	char			res;
+	char			c;
+	unsigned int	weight;
 
-	n = nb;
+	if (nb == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
 	if (nb < 0)
 	{
-		write(fd, (char*)'-', 1);
-		n = -nb;
+		write(fd, "-", 1);
+		nb = -nb;
 	}
-	if (n >= 10)
+	weight = 1;
+	while ((unsigned int)nb / 10 / weight != 0)
+		weight *= 10;
+	while (weight != 0)
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
+		c = (char)(((unsigned int)nb / weight) % 10) + '0';
+		write(fd, &c, 1);
+		weight /= 10;
 	}
-	else
-		truc(n + '0', fd);
 }

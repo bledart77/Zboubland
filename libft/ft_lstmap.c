@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/09 14:29:59 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/16 10:26:12 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/16 09:27:28 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/16 09:30:32 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strncmp(char *s1, char *s2, size_t n)
+t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	size_t			i;
-	unsigned char	c1;
-	unsigned char	c2;
+	t_list		*new;
+	t_list		*list;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (i + 1 < n && s1[i] && s2[i] && s2[i] == s1[i])
-		i++;
-	c1 = s1[i];
-	c2 = s2[i];
-	return (c1 - c2);
+	if (!lst)
+		return (NULL);
+	list = f(lst);
+	new = list;
+	while (lst->next)
+	{
+		lst = lst->next;
+		if (!(list->next = f(lst)))
+		{
+			free(list->next);
+			return (NULL);
+		}
+		list = list->next;
+	}
+	return (new);
 }
