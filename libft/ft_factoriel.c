@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_factoriel.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 08:58:51 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/17 15:37:29 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/17 15:49:27 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/17 15:54:02 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcat(char *dest, const char *src, size_t size)
+int		ft_factoriel(int nb)
 {
-	size_t		i;
-	size_t		tmp;
+	int		i;
+	int		res;
 
-	i = 0;
-	while (src[i])
-		i++;
-	tmp = i;
-	i = 0;
-	while (dest[i] && i < size)
-		i++;
-	tmp += (i < size) ? i : size;
-	if (((int)size - ft_strlen(dest) - 1) > 0)
-		ft_strncat(dest, (char*)src, size - ft_strlen(dest) - 1);
-	return (tmp);
+	if (nb == 0)
+		return (1);
+	i = nb;
+	res = nb;
+	while (i + 1 > 0)
+	{
+		res *= i;
+		i--;
+	}
+	return (res);
 }

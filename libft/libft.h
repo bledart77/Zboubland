@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 08:51:06 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/16 12:26:17 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/17 15:42:30 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,6 @@ void				ft_lstadd(t_list **alst, t_list *neew);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+
+int					ft_intlen(int n);
 #endif

@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/07 08:58:51 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/17 15:37:29 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/17 15:54:13 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/17 16:02:57 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcat(char *dest, const char *src, size_t size)
+int		ft_nsqrt(int nb, int n)
 {
-	size_t		i;
-	size_t		tmp;
+	int		i;
+	int		j;
+	int		tmp;
 
 	i = 0;
-	while (src[i])
+	tmp = 0;
+	while (i < nb)
+	{
+		tmp = i;
+		j = 2;
+		while (j < n)
+		{
+			tmp *= tmp;
+			j++;
+		}
+		if (tmp == nb)
+			return (tmp);
 		i++;
-	tmp = i;
-	i = 0;
-	while (dest[i] && i < size)
-		i++;
-	tmp += (i < size) ? i : size;
-	if (((int)size - ft_strlen(dest) - 1) > 0)
-		ft_strncat(dest, (char*)src, size - ft_strlen(dest) - 1);
-	return (tmp);
+	}
+	return (0);
+}
+
+int main()
+{
+	printf("%d\n", ft_nsqrt(9, 2));
+	return (0);
 }
