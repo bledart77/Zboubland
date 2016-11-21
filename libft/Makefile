@@ -6,7 +6,7 @@
 #    By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 09:15:52 by mcolas-d          #+#    #+#              #
-#    Updated: 2016/11/21 10:54:49 by mcolas-d         ###   ########.fr        #
+#    Updated: 2016/11/21 10:59:00 by mcolas-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,3 +96,4 @@ fclean: clean
 
 re: fclean all
 
+.PHONY: all clean fclean re
