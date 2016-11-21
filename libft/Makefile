@@ -6,7 +6,7 @@
 #    By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 09:15:52 by mcolas-d          #+#    #+#              #
-#    Updated: 2016/11/21 08:46:45 by mcolas-d         ###   ########.fr        #
+#    Updated: 2016/11/21 10:54:49 by mcolas-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,6 +70,12 @@ SRC = ft_atoi.c \
 	  ft_putstr_fd.c \
 	  ft_putstr.c \
 	  ft_putnbr_fd.c \
+	  ft_strrev.c \
+	  ft_power.c \
+	  ft_nsqrt.c \
+	  ft_itoa_base_next_level.c \
+	  ft_intlen.c \
+	  ft_factoriel.c
 
 	  OBJ = $(SRC:.c=.o)
 
