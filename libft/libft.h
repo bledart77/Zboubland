@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 08:51:06 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/17 15:42:30 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/21 10:24:52 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,9 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 
 int					ft_intlen(int n);
+int					ft_nsqrt(int nb, int n);
+int					ft_factoriel(int nb);
+int					ft_power(int nb, int pow);
+char				*ft_itoa_base_next_level(int nb, char *base);
+char				*ft_strrev(char *str);
 #endif

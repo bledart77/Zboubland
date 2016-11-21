@@ -1,43 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/17 15:54:13 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/17 16:02:57 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/17 14:08:32 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/17 15:33:56 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "fillit.h"
 
-int		ft_nsqrt(int nb, int n)
+int		main(int ac, char **av)
 {
-	int		i;
-	int		j;
-	int		tmp;
+	char	*res;
+	char	***ff;
 
-	i = 0;
-	tmp = 0;
-	while (i < nb)
-	{
-		tmp = i;
-		j = 2;
-		while (j < n)
-		{
-			tmp *= tmp;
-			j++;
-		}
-		if (tmp == nb)
-			return (tmp);
-		i++;
-	}
-	return (0);
-}
-
-int main()
-{
-	printf("%d\n", ft_nsqrt(9, 2));
+	res = ft_lire(av[1]);
+	ff = ctab(res);
+	printf("%d\n", ft_strlen(av));
+	ft_remplir(ff, res);
+	printf("%s\n", ff[0][0]);
 	return (0);
 }
