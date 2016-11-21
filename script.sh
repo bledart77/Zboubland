@@ -1,5 +1,5 @@
-rm libft/*
-rm fillit/*
+rm ./libft/*
+rm ./fillit/*
 cp ../Projects/libft/* libft/
 cp ../Projects/fillit/* fillit/
 git add ./*
