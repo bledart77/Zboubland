@@ -1,0 +1,15 @@
+Lire entree :
+	verifier bon format de l'entree
+		lignes de 4 caracteres
+		une ligne vide entre chaque tetriminos
+		que des '#' ou des '.'
+	verifier format des tetriminos
+		4 cases cote a cote
+	ajouter tetriminos a la liste des tetriminos
+	
+Pour n tetriminos, prendre un carre tel que cote*cote >= n*4
+	Backtracking :
+		Essayer de rentrer les tetriminos un par un
+		(Rappeller recursivement avec le next du tetriminos)
+	Si aucune solution trouvee 
+		Reesayer le backtracking avec un carre de cote de 1 plus grand
