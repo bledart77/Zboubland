@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 15:35:14 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/22 18:03:42 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/24 13:50:08 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,41 +70,45 @@ int		ft_test3(char *av) // teste si il y a bien 4 # par pieces
 	return (1);
 }
 
-int		ft_test4(char *av) // verifie si le tetris est conforme (on rentre piece par piece)
+int		ft_test42(char *av) // verifie si le tetris est conforme (on rentre piece par piece)
 {
-	int		i;
 	int		res;
 
-	i = 0;
-	while(av[i])
+	res = 0;
+	if (*av == '#')
 	{
-		if (av[i] == '#')
+		if (av - 1)
 		{
-			res = 0;
-			if (av[i + 1])
-			{
-				if (av[i + 1] == '#')
-					res++;
-			}
-			if (av[i - 1])
-			{
-				if (av[i - 1] == '#')
-					res++;
-			}
-			if (av[i - 5])
-			{
-				if (av[i - 5] == '#')
-					res++;
-			}
-			if (av[i + 5])
-			{
-				if (av[i + 5] == '#')
-					res++;
-			}
+		if (*av - 1 == '#')
+			res++;
 		}
-		if (res == 0)
-			return (0);
-		i++;
+		if (av - 1)
+		{
+			if (*av - 1 == '#')
+				res++;
+		}
 	}
-	return (1);
+	return (res);
+}
+
+int		ft_test41(char *av) // verifie si le tetris est conforme (on rentre piece par piece)
+{
+	int		res;
+
+	res = 0;
+	if (*av == '#')
+	{
+		if (*av + 5)
+		{
+			printf("%s\n", av);
+			if (*av + 5 == '#')
+				res++;
+		}
+		if (*av - 5)
+		{
+			if (*av - 5 == '#')
+				res++;
+		}
+	}
+	return (res);
 }
