@@ -6,34 +6,31 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 11:36:27 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/24 14:00:17 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/28 10:39:29 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_test41(char *av, int i);
-int		ft_test42(char *av, int i);
-
 int		ft_test4(char *av)
 {
 	int		i;
+	int		res;
 
+	res = 0;
 	i = 0;
 	while (av[i])
 	{
 		if (av[i] == '#')
-		{
-			//printf("%d\n", ft_test41(av) + ft_test42(av));
-			if (ft_test41(av, i) + ft_test42(av, i) > 2)
-			;
-		}
+			res += ft_test41(av, i) + ft_test42(av, i);
 		i++;
 	}
-	return (1);
+	if (res % 6 == 0)
+		return (1);
+	return (0);
 }
 
-int		ft_test5(char *av)			//verifie si il n'y a pas autre chose que des # des \n ou des . dans les pieces
+int		ft_test5(char *av)
 {
 	while(*av)
 	{
@@ -42,4 +39,12 @@ int		ft_test5(char *av)			//verifie si il n'y a pas autre chose que des # des \n
 		av++;
 	}
 	return (1);
+}
+
+int		ft_finaltest(char *av)
+{
+	if (ft_test4(av) == 1 && ft_test5(av) == 1 && ft_test1(av) == 1 \
+		&& ft_test2(av) == 1 && ft_test3(av) == 1)
+		return (1);
+	return (0);
 }

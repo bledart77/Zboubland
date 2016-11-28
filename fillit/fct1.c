@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 09:46:33 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/17 15:29:28 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/28 10:13:24 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int		ft_libref(int *x, int *y, char **av)
 	return (0);
 }
 
-char	*ft_lire(char *av)
+char	*ft_read(char *av)
 {
 	int		i;
 	int		fd;

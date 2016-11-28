@@ -6,20 +6,20 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 15:35:14 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/24 13:50:08 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/11/28 10:39:07 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-int		ft_test1(char *av) // teste le nombre d'argument
+int		ft_test1(char *av)
 {
 	if (nbtab(av) == 0 || nbtab(av) > 26)
 		return (0);
 	return (1);
 }
 
-int		ft_test2(char *av) // teste si les pieces sont bien des carres de 4x4 avec un \n entre chaque
+int		ft_test2(char *av)
 {
 	int		i;
 	int		j;
@@ -46,7 +46,7 @@ int		ft_test2(char *av) // teste si les pieces sont bien des carres de 4x4 avec 
 	return (1);
 }
 
-int		ft_test3(char *av) // teste si il y a bien 4 # par pieces
+int		ft_test3(char *av)
 {
 	int		i;
 	int		cnt;
@@ -70,45 +70,39 @@ int		ft_test3(char *av) // teste si il y a bien 4 # par pieces
 	return (1);
 }
 
-int		ft_test42(char *av) // verifie si le tetris est conforme (on rentre piece par piece)
+int		ft_test42(char *av, int i)
 {
 	int		res;
 
 	res = 0;
-	if (*av == '#')
+	if (av[i - 1])
 	{
-		if (av - 1)
-		{
-		if (*av - 1 == '#')
+		if (av[i - 1] == '#')
 			res++;
-		}
-		if (av - 1)
-		{
-			if (*av - 1 == '#')
-				res++;
-		}
+	}
+	if (av[i + 1])
+	{
+		if (av[i + 1] == '#')
+			res++;
 	}
 	return (res);
+
 }
 
-int		ft_test41(char *av) // verifie si le tetris est conforme (on rentre piece par piece)
+int		ft_test41(char *av, int i)
 {
 	int		res;
 
 	res = 0;
-	if (*av == '#')
+	if (av[i + 5])
 	{
-		if (*av + 5)
-		{
-			printf("%s\n", av);
-			if (*av + 5 == '#')
-				res++;
-		}
-		if (*av - 5)
-		{
-			if (*av - 5 == '#')
-				res++;
-		}
+		if (av[i + 5] == '#')
+			res++;
+	}
+	if (av[i - 5])
+	{
+		if (av[i - 5] == '#')
+			res++;
 	}
 	return (res);
 }
