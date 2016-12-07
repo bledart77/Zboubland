@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 15:35:14 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/28 10:39:07 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/12/07 05:38:07 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		ft_test2(char *av)
 				return (0);
 			j++;
 		}
-		if (i != nb -1)
+		if (i != nb - 1)
 		{
 			if (av[20 * (i + 1) + i] != '\n')
 				return (0);
@@ -86,7 +86,6 @@ int		ft_test42(char *av, int i)
 			res++;
 	}
 	return (res);
-
 }
 
 int		ft_test41(char *av, int i)

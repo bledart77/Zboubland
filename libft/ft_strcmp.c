@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   testcheck.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/28 09:29:17 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/28 10:13:09 by mcolas-d         ###   ########.fr       */
+/*   Created: 2016/11/02 15:49:32 by mcolas-d          #+#    #+#             */
+/*   Updated: 2016/11/16 12:19:52 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-int		main(int ac, char **av)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-	char	*res;
+	int				i;
+	unsigned char	c1;
+	unsigned char	c2;
 
-	ac = 2;
-	res = ft_read(av[1]);
-	printf("%d\n", ft_finaltest(res));
-	return (0);
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] && s2[i])
+		i++;
+	c1 = s1[i];
+	c2 = s2[i];
+	return (c1 - c2);
 }

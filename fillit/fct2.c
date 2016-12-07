@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 11:25:28 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/11/28 11:59:44 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/12/07 05:38:39 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@ int		nbtab(char *av)
 	int		res;
 
 	i = 0;
-	res = 0;
+	res = 1;
 	while (av[i + 1])
 	{
 		if (av[i] == '\n' && av[i + 1] == '\n')
 			res++;
 		i++;
 	}
+	if (res > 1)
+		res = res - 1;
 	return (res);
 }
 
@@ -54,6 +56,8 @@ int		ft_minsquare(char *av)
 	int		res;
 
 	n = nbtab(av);
+	if (n == 1)
+		return (2);
 	res = n * 4;
 	res = ft_sqrtv2(res);
 	return (res);
@@ -62,7 +66,7 @@ int		ft_minsquare(char *av)
 void	ft_putstr(char *str)
 {
 	int		i;
-	
+
 	i = 0;
 	while (str[i])
 	{

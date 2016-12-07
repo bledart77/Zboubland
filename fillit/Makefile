@@ -6,7 +6,7 @@
 #    By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/22 14:55:25 by mcolas-d          #+#    #+#              #
-#    Updated: 2016/11/28 12:53:29 by mcolas-d         ###   ########.fr        #
+#    Updated: 2016/12/07 06:21:26 by mcolas-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,14 +17,17 @@ SRC = backtracking.c \
 	  check2.c \
 	  fct1.c \
 	  fct2.c \
+	  build_tetri.c \
+	  fct3.c \
 	  main.c
 
 OBJ = $(SRC:.c=.o)
 
-all: $(NAME)
-
 $(NAME):
 	gcc -o $(NAME) -Wall -Wextra -Werror $(SRC)
+
+all:
+	$(NAME)
 
 clean:
 	rm $(OBJ)
