@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/17 09:47:48 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/12/07 05:51:38 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/12/20 05:50:03 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int					ft_test5(char *av);
 int					ft_finaltest(char *av);
 int					ft_test6(char *av);
 int					ft_nei(char *av, int i);
+int					ft_test7(char *av);
+int					ft_test8(char *av);
 
 typedef struct		s_coord
 {
@@ -63,6 +65,5 @@ void				found_sharp(int *nb_case_found, t_etri *tetri,
 char				*loop_on_str(char *str, t_coord *first_case, t_etri *tetri);
 t_etri				*tetri_construct(char *str, char c);
 void				ft_cut(t_coord *pos);
-int					ft_test(t_coord *pos, t_etri *piece, int nb);
 
 #endif

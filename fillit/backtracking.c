@@ -6,7 +6,7 @@
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 12:50:14 by mcolas-d          #+#    #+#             */
-/*   Updated: 2016/12/07 05:42:56 by mcolas-d         ###   ########.fr       */
+/*   Updated: 2016/12/20 05:47:52 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ int		ft_available(t_etri *piece, t_coord *pos, char *res, int nb)
 	int		k;
 
 	k = 0;
-	if (ft_test(pos, piece, nb))
-		return (1);
 	if (res[(pos->x - piece->v1.x) + (nb + 1) * (pos->y - piece->v1.y)] == '.')
 		k++;
 	if (res[(pos->x - piece->v2.x) + (nb + 1) * (pos->y - piece->v2.y)] == '.')
