@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcolas-d <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/29 11:00:56 by mcolas-d          #+#    #+#             */
-/*   Updated: 2017/01/18 11:32:52 by mcolas-d         ###   ########.fr       */
+/*   Created: 2017/01/16 11:01:55 by mcolas-d          #+#    #+#             */
+/*   Updated: 2017/01/16 13:51:16 by mcolas-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "get_next_line.h"
 
-# define BUFF_SIZE 5
-# include <unistd.h>
-# include <fcntl.h>
-# include <stdlib.h>
-# include "libft/includes/libft.h"
-# include <stdio.h>
+int		main(int ac, char **av)
+{
+	ac = 0;
+	char	*line;
+	int		fd;
+	int		i;
 
-int		get_next_line(const int fd, char **line);
-#endif
+	i = 1;
+	fd = open(av[1], O_RDONLY);
+	while ((i = get_next_line(fd, &line)) > 0)
+	{
+		printf("%s   %d\n", line, i);
+		if (i > 50)
+			break ;
+	}
+	i = get_next_line(fd, &line);
+	printf("%s  %d\n", line, i);
+	//printf("%d\n", ft_strcmp(line, "ucdsjnkds"));
+	close(fd);
+	return (1);
+}
