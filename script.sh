@@ -9,7 +9,7 @@ mkdir get_next_line/libft
 mkdir get_next_line/libft/includes
 mkdir ft_printf
 mkdir ft_printf/includes
-mdkir ft_printf/libft
+mkdir ft_printf/libft
 mkdir ft_printf/src
 cp ../Projects/libft/* libft/
 cp ../Projects/fillit/* fillit/
